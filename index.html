@@ -6,10 +6,20 @@
     <title>SINET | Multimedia & CAD Institute</title>
     <meta name="description" content="Learn Graphic Design, Video Editing, Animation & CAD with practical, career-focused training at SINET.">
     
-    <!-- Preconnect to Google Fonts -->
+    <!-- Preconnect to Google Fonts & Unsplash -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- Preload Hero Image for LCP -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=350&q=75">
+
+    <!-- Defer Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    </noscript>
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -102,7 +112,7 @@
                 Create.<br>Design.<br><span class="highlight">Edit.</span>
             </div>
             <div class="hero-visual">
-                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=400&q=80" alt="Creative Workspace" width="400" height="300" loading="eager" class="hero-img">
+                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=350&q=75" alt="Creative Workspace" width="350" height="262" loading="eager" fetchpriority="high" class="hero-img">
             </div>
             <p class="hero-subtitle">Build your creative career with SINET.</p>
             <p class="hero-desc">Learn Graphic Design, Video Editing, Animation & CAD with practical, career-focused training.</p>
