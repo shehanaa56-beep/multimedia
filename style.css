@@ -928,7 +928,7 @@ img {
 /* 10 - Footer */
 .new-footer {
   background-color: #FAFAFA;
-  padding: 56px 0 100px;
+  padding: 56px 0 40px;
   color: #62646A;
 }
 
@@ -1092,18 +1092,25 @@ img {
   color: #D1D5DB;
 }
 
-/* 11 - Sticky Mobile CTA */
-.mobile-sticky-cta {
+/* 11 - Floating WhatsApp CTA */
+.floating-wa-btn {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  background-color: var(--white);
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  width: 64px;
+  height: 64px;
+  background-color: #E0F5E9;
+  border-radius: 50%;
   display: flex;
-  padding: 12px;
-  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.2);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-wa-btn:hover {
+  transform: scale(1.1);
 }
 
 .sticky-btn {
@@ -1206,6 +1213,16 @@ img {
 
 .p-card-icon {
   font-size: 32px;
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+}
+
+.card-image-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .p-card-content {
@@ -1703,10 +1720,7 @@ img {
     text-align: left;
   }
 
-  /* Hide mobile sticky CTA on desktop */
-  .mobile-sticky-cta {
-    display: none;
-  }
+  /* Floating WA button is visible on desktop too */
 }
 
 /* Desktop Large (1024px+) */
@@ -1720,6 +1734,10 @@ img {
   }
 
   .ratings-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .placement-cards {
     grid-template-columns: repeat(4, 1fr);
   }
 }
