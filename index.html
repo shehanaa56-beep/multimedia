@@ -421,15 +421,7 @@ img {
   align-items: end;
 }
 
-.hero-kicker {
-  grid-area: kicker;
-  color: var(--primary);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
+.hero-kicker { grid-area: kicker; color: var(--primary); font-size: 14px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0; }
 
 .hero-title {
   grid-area: title;
@@ -1450,17 +1442,7 @@ img {
     display: flex;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "kicker visual"
-      "title visual"
-      "subtitle visual"
-      "desc visual"
-      "actions visual";
-    align-items: center;
-    gap: 48px;
-  }
+  .hero-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "kicker visual" "title visual" "subtitle visual" "desc visual" "actions visual"; align-items: start; column-gap: 48px; row-gap: 16px; align-content: center; } .hero-visual { grid-row: 1 / -1; } .hero-kicker { font-size: 16px; margin-top: 32px; }
   
   .hero-visual {
     margin-bottom: 0;
@@ -2438,6 +2420,7 @@ img {
     </script>
 </body>
 </html>
+
 
 
 
