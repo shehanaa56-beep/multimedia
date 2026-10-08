@@ -93,6 +93,12 @@ img {
   padding: 0 24px;
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
 .section {
   padding: 64px 0;
 }
@@ -544,11 +550,16 @@ img {
   padding: 8px 16px;
 }
 
-/* 04 - Creative Paths */
 .paths-grid {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .paths-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .path-card {
@@ -559,6 +570,8 @@ img {
   transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
 .path-card:hover {
@@ -586,25 +599,13 @@ img {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   flex-grow: 1;
 }
 
 .path-card li {
   color: var(--muted);
   font-size: 12px;
-}
-
-.explore-link {
-  font-weight: 600;
-  color: var(--dark);
-  font-size: 13px;
-  display: inline-flex;
-  align-items: center;
-  margin-top: auto;
-}
-.explore-link:hover {
-  color: var(--primary);
 }
 
 /* 05 - Professional Programs */
@@ -747,6 +748,15 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: #D1D5DB;
 }
 
 .tool-icon {
@@ -1133,6 +1143,20 @@ img {
   transform: scale(1.1);
 }
 
+@media (max-width: 640px) {
+  .floating-wa-btn {
+    width: 48px;
+    height: 48px;
+    right: 14px;
+    bottom: 16px;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  }
+  .floating-wa-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 .sticky-btn {
   flex: 1;
   display: flex;
@@ -1155,6 +1179,86 @@ img {
   background-color: transparent;
   color: var(--dark);
   border: 1px solid var(--border);
+}
+
+/* Hot Courses Section */
+.hot-courses-section {
+  background-color: #FDD835;
+  padding: 40px 0;
+}
+
+.hot-courses-title {
+  text-align: center;
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 800;
+  color: #1a237e;
+  letter-spacing: -0.5px;
+  margin-bottom: 36px;
+}
+
+.hot-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 32px;
+}
+
+@media (max-width: 767px) {
+  .hot-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hot-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+.hot-course-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: transform 0.2s ease;
+}
+
+.hot-course-card:hover {
+  transform: translateY(-3px);
+}
+
+.hot-course-name {
+  font-size: clamp(17px, 3vw, 22px);
+  font-weight: 800;
+  color: #1a237e;
+  line-height: 1.2;
+}
+
+.hot-course-card:hover .hot-course-name {
+  color: #E53935;
+}
+
+.hot-course-badge {
+  display: inline-block;
+  background-color: #FDD835;
+  border: 2px solid #1a237e;
+  color: #1a237e;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* Highlighted fee badge (yellow pill style) */
+.hot-course-badge.emi {
+  background-color: #FFEE58;
+  border-color: transparent;
+  box-shadow: inset 0 0 0 2px rgba(26,35,126,0.15);
 }
 
 /* 06.5 - Job Placements */
@@ -1184,7 +1288,7 @@ img {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.p-card { background-color: var(--white); border: 1px solid var(--border); padding: 0; border-radius: 12px; display: flex; flex-direction: column; gap: 0; align-items: stretch; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.p-card { background-color: var(--white); border: 1px solid var(--border); padding: 0; border-radius: 12px; display: flex; flex-direction: column; gap: 0; align-items: stretch; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; cursor: pointer; }
 
 .p-card:hover {
   transform: translateY(-4px);
@@ -1321,6 +1425,8 @@ img {
   text-align: center;
   box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .rating-card:hover {
@@ -1355,23 +1461,21 @@ img {
 
 .card-logo-wrapper {
   position: relative;
-  height: 40px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
 }
 
-.logo-bg-circle {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(242, 56, 45, 0.08);
-  border-radius: 50%;
-  left: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 0;
+.rating-logo-img {
+  max-width: 135px;
+  max-height: 46px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.06));
 }
 
 .card-logo {
@@ -1415,6 +1519,153 @@ img {
 
 .card-cta:hover {
   color: #F2382D;
+}
+
+/* 06.9 - SINET Advantages Section */
+.advantages-section {
+  background-color: #F8FAFC;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.advantages-section .section-title {
+  margin-bottom: 12px;
+}
+
+.advantages-subtitle {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 680px;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .advantages-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.advantage-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.advantage-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.08);
+  border-color: #CBD5E1;
+}
+
+.advantage-num {
+  width: 38px;
+  height: 38px;
+  background: #FFF1F0;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(229, 57, 53, 0.15);
+}
+
+.advantage-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.advantage-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+  line-height: 1.35;
+  word-wrap: break-word;
+}
+
+.advantage-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+/* Mobile optimizations for Advantages section */
+@media (max-width: 640px) {
+  .advantages-section {
+    padding: 44px 0;
+  }
+
+  .advantages-section .section-label {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .advantages-section .section-title {
+    font-size: clamp(23px, 6.2vw, 29px);
+    line-height: 1.22;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+
+  .advantages-subtitle {
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+
+  .advantages-grid {
+    gap: 10px;
+  }
+
+  .advantage-card {
+    padding: 14px 14px;
+    gap: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  }
+
+  .advantage-num {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  .advantage-title {
+    font-size: 14.5px;
+    line-height: 1.3;
+    margin-bottom: 3px;
+  }
+
+  .advantage-desc {
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
 }
 
 /* Responsive Breakpoints */
@@ -1544,21 +1795,14 @@ img {
     height: 14px;
   }
   .card-logo-wrapper {
-    height: 64px;
-    margin-bottom: 24px;
+    height: 60px;
+    margin-bottom: 20px;
   }
-  .logo-bg-circle {
-    width: 56px;
-    height: 56px;
-    left: -16px;
+  .rating-logo-img {
+    max-width: 155px;
+    max-height: 55px;
   }
-  .card-logo, .card-logo * {
-    font-size: 24px !important;
-  }
-  .card-logo svg {
-    width: 24px !important;
-    height: 24px !important;
-  }
+
   .card-stars {
     font-size: 20px;
     margin-bottom: 16px;
@@ -1681,7 +1925,8 @@ img {
   }
 
   .ratings-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
   }
 
   .placement-cards {
@@ -1760,11 +2005,11 @@ img {
             </div>
 
             <div class="mn-footer">
-                <a href="#" class="sticky-btn whatsapp">
+                <a href="https://wa.me/918086800700" target="_blank" rel="noopener" class="sticky-btn whatsapp">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                     WhatsApp
                 </a>
-                <a href="#" class="sticky-btn call">
+                <a href="tel:+918086800700" class="sticky-btn call">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     Call Now
                 </a>
@@ -1814,53 +2059,77 @@ img {
             <h2 class="section-title">Choose your creative path</h2>
             
             <div class="paths-grid">
-                <div class="path-card">
+
+                <!-- Photoshop -->
+                <a href="https://www.sinet.in/Multimedia/photoshop-course-in-perinthalmanna-malappuram/" class="path-card" target="_blank" rel="noopener">
                     <span class="path-num">01</span>
-                    <h3>Graphic Design</h3>
+                    <h3>Photoshop</h3>
                     <ul>
-                        <li>Photoshop</li>
-                        <li>Illustrator</li>
-                        <li>CorelDraw</li>
-                        <li>InDesign</li>
+                        <li>Adobe Photoshop</li>
+                        <li>Photo Editing</li>
+                        <li>Digital Design</li>
                     </ul>
-                    <a href="#" class="explore-link">Explore &rarr;</a>
-                </div>
-                
-                <div class="path-card">
+                </a>
+
+                <!-- Illustrator -->
+                <a href="helpme.html?course=Illustrator" class="path-card" target="_blank" rel="noopener">
                     <span class="path-num">02</span>
-                    <h3>Video Editing</h3>
+                    <h3>Illustrator</h3>
                     <ul>
-                        <li>Premiere Pro</li>
-                        <li>Edius</li>
-                        <li>Video Production</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Vector Design</li>
+                        <li>Logo Creation</li>
                     </ul>
-                    <a href="#" class="explore-link">Explore &rarr;</a>
-                </div>
-                
-                <div class="path-card">
+                </a>
+
+                <!-- InDesign -->
+                <a href="helpme.html?course=InDesign" class="path-card" target="_blank" rel="noopener">
                     <span class="path-num">03</span>
-                    <h3>Animation</h3>
+                    <h3>InDesign</h3>
                     <ul>
-                        <li>2D / 3D Animation</li>
-                        <li>Motion Graphics</li>
-                        <li>3D Studio Max</li>
+                        <li>Adobe InDesign</li>
+                        <li>Page Layout</li>
+                        <li>Print Design</li>
                     </ul>
-                    <a href="#" class="explore-link">Explore &rarr;</a>
-                </div>
-                
-                <div class="path-card">
+                </a>
+
+                <!-- CAD -->
+                <a href="helpme.html?course=CAD" class="path-card" target="_blank" rel="noopener">
                     <span class="path-num">04</span>
-                    <h3>CAD & Design</h3>
+                    <h3>CAD</h3>
                     <ul>
                         <li>AutoCAD</li>
                         <li>CAD Drawing</li>
                         <li>Design Tools</li>
                     </ul>
-                    <a href="#" class="explore-link">Explore &rarr;</a>
-                </div>
+                </a>
+
+                <!-- CorelDraw -->
+                <a href="https://www.sinet.in/coreldraw-course-in-perinthalmanna-malappuram/index.html" class="path-card" target="_blank" rel="noopener">
+                    <span class="path-num">05</span>
+                    <h3>CorelDraw</h3>
+                    <ul>
+                        <li>CorelDraw Graphics</li>
+                        <li>Vector Illustration</li>
+                        <li>Print &amp; Layout</li>
+                    </ul>
+                </a>
+
+                <!-- MS Office -->
+                <a href="https://www.sinet.in/mso-microsoft-office-word-excel-powerpoint-internet-course/index.html" class="path-card" target="_blank" rel="noopener">
+                    <span class="path-num">06</span>
+                    <h3>MS Office</h3>
+                    <ul>
+                        <li>Word &amp; Excel</li>
+                        <li>PowerPoint</li>
+                        <li>Internet Basics</li>
+                    </ul>
+                </a>
+
             </div>
         </div>
     </section>
+
 
     <!-- 05 - Professional Programs -->
     <section class="section">
@@ -1887,7 +2156,7 @@ img {
                     
                     <span class="tag tag-emi">Emi ₹ 3500</span>
                     
-                    <a href="#contact" class="btn btn-primary full-width">Enquire about DVMP &rarr;</a>
+                    <a href="https://www.sinet.in/multimedia-courses-in-perinthalmanna-manjeri-malappuram/diploma-in-visual-media-production.html" target="_blank" rel="noopener" class="btn btn-primary full-width">Enquire about DVMP &rarr;</a>
                 </div>
 
                 <!-- Course 2: DGID -->
@@ -1909,7 +2178,7 @@ img {
                     
                     <span class="tag tag-emi">Emi ₹ 3500</span>
                     
-                    <a href="#contact" class="btn btn-primary full-width">Enquire about DGID &rarr;</a>
+                    <a href="https://www.sinet.in/multimedia/dgid.html" target="_blank" rel="noopener" class="btn btn-primary full-width">Enquire about DGID &rarr;</a>
                 </div>
             </div>
         </div>
@@ -1922,46 +2191,46 @@ img {
             <h2 class="section-title">Available short term courses</h2>
             
             <div class="tools-grid">
-                <div class="tool-item">
+                <a href="https://www.sinet.in/multimedia/photoshop-course-in-perinthalmanna-malappuram/" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Ps</div>
                     <span class="tool-name">Adobe Photoshop</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="https://www.sinet.in/coreldraw-course-in-perinthalmanna-malappuram/" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Cd</div>
                     <span class="tool-name">CorelDraw</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="helpme.html?course=Illustrator" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Ai</div>
                     <span class="tool-name">Adobe Illustrator</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="helpme.html?course=InDesign" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Id</div>
                     <span class="tool-name">Adobe Indesign</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="helpme.html?course=Adobe%20Premier" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Pr</div>
                     <span class="tool-name">Adobe Premier</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="helpme.html?course=Corel%20Video%20Studio" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Vs</div>
                     <span class="tool-name">Corel Video Studio</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="helpme.html?course=3DStudio%20Max" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">3D</div>
                     <span class="tool-name">3DStudio Max</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="helpme.html?course=Adobe%20Flash" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Fl</div>
                     <span class="tool-name">Adobe Flash</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="helpme.html?course=Adobe%20After%20Effects" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Ae</div>
                     <span class="tool-name">Adobe After Effects</span>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="helpme.html?course=CAD" target="_blank" rel="noopener" class="tool-item">
                     <div class="tool-icon">Ac</div>
                     <span class="tool-name">AutoCad</span>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -1974,70 +2243,72 @@ img {
                     <p class="section-label">JOB PLACEMENTS</p>
                     <h2 class="section-title" style="margin-bottom: 16px;">Multimedia<br>Job Placements</h2>
                     <p class="placement-desc">Sinet offers job placement assistance to students and recruitment assistance to companies looking to hire trained multimedia professionals.</p>
-                    <a href="#" class="btn btn-primary" style="margin-top: 24px;">For Details Click Here &rarr;</a>
+                    <a href="https://www.sinet.in/Job-Placements/index.html" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 24px;">For Details Click Here &rarr;</a>
                 </div>
                 <div class="placement-visual">
-                    <img src="images/placement-hero.webp" alt="Multimedia Job Placements" class="handshake-img">
+                    <a href="https://www.sinet.in/Job-Placements/index.html" target="_blank" rel="noopener">
+                        <img src="images/placement-hero.webp" alt="Multimedia Job Placements" class="handshake-img">
+                    </a>
                 </div>
             </div>
 
             <div class="placement-cards">
-                <div class="p-card">
+                <a href="https://www.sinet.in/Job-Placements/index.html" target="_blank" rel="noopener" class="p-card">
                     <div class="p-card-icon">🎯</div>
                     <div class="p-card-content">
                         <h4>Placement Process</h4>
                         <p>Know how our placement support works and how we help you build your career.</p>
-                        <a href="#" class="primary-text link-arrow">View Details &rarr;</a>
+                        <span class="primary-text link-arrow">View Details &rarr;</span>
                     </div>
-                </div>
-                <div class="p-card">
+                </a>
+                <a href="https://www.sinet.in/sinet_happy_students.html" target="_blank" rel="noopener" class="p-card">
                     <div class="p-card-icon"><img src="images/testimonials.webp" alt="Testimonials" class="card-image-icon"></div>
                     <div class="p-card-content">
                         <h4>Testimonials</h4>
                         <p>Hear from our students about their placement experiences and success stories.</p>
-                        <a href="#" class="primary-text link-arrow">View Testimonials &rarr;</a>
+                        <span class="primary-text link-arrow">View Testimonials &rarr;</span>
                     </div>
-                </div>
-                <div class="p-card">
+                </a>
+                <a href="https://www.sinet.in/Global_Certifications/winners_rank_holders.html" target="_blank" rel="noopener" class="p-card">
                     <div class="p-card-icon"><img src="images/trophy.webp" alt="Global Winners" class="card-image-icon"></div>
                     <div class="p-card-content">
                         <h4>Global Winners</h4>
                         <p>Our students who have achieved global certifications and placed in top companies.</p>
-                        <a href="#" class="primary-text link-arrow">View Success Stories &rarr;</a>
+                        <span class="primary-text link-arrow">View Success Stories &rarr;</span>
                     </div>
-                </div>
-                <div class="p-card">
+                </a>
+                <a href="https://www.sinet.in/certificates/" target="_blank" rel="noopener" class="p-card">
                     <div class="p-card-icon"><img src="images/gradcap.webp" alt="Get Certified" class="card-image-icon"></div>
                     <div class="p-card-content">
                         <h4>Get Certified</h4>
                         <p>Register for the Sinet Examination to test your skills and earn recognized credentials.</p>
-                        <a href="#" class="primary-text link-arrow">Register Now &rarr;</a>
+                        <span class="primary-text link-arrow">Register Now &rarr;</span>
                     </div>
-                </div>
-                <div class="p-card">
+                </a>
+                <a href="https://www.sinet.in/Software%20Projects/Projects.aspx" target="_blank" rel="noopener" class="p-card">
                     <div class="p-card-icon"><img src="images/projects.webp" alt="Projects" class="card-image-icon"></div>
                     <div class="p-card-content">
                         <h4>Projects</h4>
                         <p>Explore our comprehensive database of solved software and multimedia projects.</p>
-                        <a href="#" class="primary-text link-arrow">View Projects &rarr;</a>
+                        <span class="primary-text link-arrow">View Projects &rarr;</span>
                     </div>
-                </div>
-                <div class="p-card">
+                </a>
+                <a href="https://www.sinet.in/certificates/" target="_blank" rel="noopener" class="p-card">
                     <div class="p-card-icon"><img src="images/magnify.webp" alt="Certification" class="card-image-icon"></div>
                     <div class="p-card-content">
                         <h4>Certification</h4>
                         <p>Verify your SINET course completion certificate instantly through our secure portal.</p>
-                        <a href="#" class="primary-text link-arrow">Verify Certificate &rarr;</a>
+                        <span class="primary-text link-arrow">Verify Certificate &rarr;</span>
                     </div>
-                </div>
-                <div class="p-card">
+                </a>
+                <a href="https://www.sinet.in/SINET_Contact.aspx" target="_blank" rel="noopener" class="p-card">
                     <div class="p-card-icon">🤝</div>
                     <div class="p-card-content">
                         <h4>Alumni Corner</h4>
                         <p>We love our students. Stay connected with our vibrant community of successful alumni.</p>
-                        <a href="#" class="primary-text link-arrow">Meet Alumni &rarr;</a>
+                        <span class="primary-text link-arrow">Meet Alumni &rarr;</span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -2067,70 +2338,217 @@ img {
             </div>
 
             <div class="ratings-grid">
-                <!-- Card 1 -->
-                <div class="rating-card">
-                    <a href="#" class="external-link-icon" aria-label="View Google Rating">
+                <!-- Card 1: Google -->
+                <a href="https://www.google.com/search?ei=PBXeXajoO42Z4-EPhIeP0Ao&q=google+rating+of+sinet+education&oq=google+rating+of+sinet+education&gs_l=psy-ab.3...7187.9219..9766...0.2..0.260.1362.0j9j1......0....1..gws-wiz.......0i71j33i160.WpZ3mcq2ZyM&ved=0ahUKEwio9sa834nmAhWNzDgGHYTDA6oQ4dUDCAs&uact=5#lrd=0x3ba7cdab4ceedacf:0xca01390635b1ff01,1,,,x" target="_blank" rel="noopener" class="rating-card">
+                    <span class="external-link-icon" aria-label="View Google Rating">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
+                    </span>
                     <div class="card-logo-wrapper">
-                        <div class="logo-bg-circle"></div>
-                        <div class="card-logo" style="font-family: Arial, sans-serif; font-size: 26px; letter-spacing: -1px;">
-                            <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
-                        </div>
+                        <img src="images/Sinet-Google.webp" alt="Google" class="rating-logo-img" width="212" height="75" loading="lazy">
                     </div>
                     <div class="card-stars">★★★★★</div>
                     <p class="card-text">Sinet is highly rated in the most used search engine in the World Google.</p>
-                    <a href="#" class="card-cta">Click here to see the rating in Google. &rarr;</a>
-                </div>
+                    <span class="card-cta">Click here to see the rating in Google.. &rarr;</span>
+                </a>
 
-                <!-- Card 2 -->
-                <div class="rating-card">
-                    <a href="#" class="external-link-icon" aria-label="View Sulekha Rating">
+                <!-- Card 2: Sulekha -->
+                <a href="https://www.sulekha.com/profile/sinet-perinthalmanna-malappuram" target="_blank" rel="noopener" class="rating-card">
+                    <span class="external-link-icon" aria-label="View Sulekha Rating">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
+                    </span>
                     <div class="card-logo-wrapper">
-                        <div class="logo-bg-circle"></div>
-                        <div class="card-logo" style="display: flex; align-items: center; gap: 6px;">
-                            <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#D51920"/><path d="M8 12c0-3 5-3 5-7 0 5-5 5-5 9s6 2 6 2-5-1-5-4z" fill="#FFF"/></svg>
-                            <span style="color:#D51920; font-size: 24px;">Sulekha</span>
-                        </div>
+                        <img src="images/Sinet-sulekha.webp" alt="Sulekha" class="rating-logo-img" width="212" height="75" loading="lazy">
                     </div>
                     <div class="card-stars">★★★★★</div>
                     <p class="card-text">Sinet is top rated in Sulekha the digital platform of India.</p>
-                    <a href="#" class="card-cta">Click here to see the rating in Sulekha. &rarr;</a>
-                </div>
+                    <span class="card-cta">Click here to see the rating in Sulekha.. &rarr;</span>
+                </a>
 
-                <!-- Card 3 -->
-                <div class="rating-card">
-                    <a href="#" class="external-link-icon" aria-label="View Quickerala Rating">
+                <!-- Card 3: Quickerala -->
+                <a href="https://www.quickerala.com/malappuram/perinthalmanna/sinet-institute-of-networking/420263" target="_blank" rel="noopener" class="rating-card">
+                    <span class="external-link-icon" aria-label="View Quickerala Rating">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
+                    </span>
                     <div class="card-logo-wrapper">
-                        <div class="logo-bg-circle"></div>
-                        <div class="card-logo" style="background:#FCE300; padding: 4px 8px; border-radius: 6px; border: 1px solid #111;">
-                            <span style="color:#111; font-weight: 800; font-style: italic; font-size: 18px; letter-spacing: -0.5px;">Quickerala</span>
-                        </div>
+                        <img src="images/Sinet-Quickerala.webp" alt="Quickerala" class="rating-logo-img" width="212" height="75" loading="lazy">
                     </div>
                     <div class="card-stars">★★★★★</div>
                     <p class="card-text">Sinet is five star rated in Quick Kerala the leading search engine in S.India.</p>
-                    <a href="#" class="card-cta">Click here to see the rating in Quickerala. &rarr;</a>
-                </div>
+                    <span class="card-cta">Click here to see the rating in Quickerala.. &rarr;</span>
+                </a>
 
-                <!-- Card 4 -->
-                <div class="rating-card">
-                    <a href="#" class="external-link-icon" aria-label="View LearnPick Rating">
+                <!-- Card 4: LearnPick -->
+                <a href="https://www.learnpick.in/center-details/calicut/sinet/21664" target="_blank" rel="noopener" class="rating-card">
+                    <span class="external-link-icon" aria-label="View LearnPick Rating">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    </a>
+                    </span>
                     <div class="card-logo-wrapper">
-                        <div class="logo-bg-circle"></div>
-                        <div class="card-logo" style="display: flex; flex-direction: column; line-height: 1;">
-                            <span style="color:#111; font-size: 20px;"><strong style="color:#E12028">Learn</strong>Pick</span>
-                            <span style="color:#0055A5; font-size: 16px; font-weight: 800; margin-top: 2px;">search<span style="color:#8CC63F">i</span><span style="color:#111; font-size: 14px;">.in</span></span>
-                        </div>
+                        <img src="images/sinet-learnpick.webp" alt="LearnPick" class="rating-logo-img" width="212" height="75" loading="lazy">
                     </div>
                     <div class="card-stars">★★★★★</div>
                     <p class="card-text">Sinet is five star rated in Learn Pick the leading education search engine in India.</p>
-                    <a href="#" class="card-cta">Click here to see the rating in Learn Pick. &rarr;</a>
+                    <span class="card-cta">Click here to see the rating in Learn Pick.. &rarr;</span>
+                </a>
+
+                <!-- Card 5: searchi.in -->
+                <a href="http://searchi.in/malappuram/perinthalmanna/sinet-accounts-academy/117753/1" target="_blank" rel="noopener" class="rating-card">
+                    <span class="external-link-icon" aria-label="View Search-i Rating">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </span>
+                    <div class="card-logo-wrapper">
+                        <img src="images/sinet-searchi.webp" alt="searchi.in" class="rating-logo-img" width="212" height="75" loading="lazy">
+                    </div>
+                    <div class="card-stars">★★★★★</div>
+                    <p class="card-text">Sinet is five star rated in Searh-i the leading search engine in India.</p>
+                    <span class="card-cta">Click here to see the rating in Search-i.. &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06.9 - SINET Advantages -->
+    <section id="advantages" class="section advantages-section">
+        <div class="container">
+            <p class="section-label">SINET ADVANTAGES</p>
+            <h2 class="section-title">15 Reasons to Join SINET Education Center</h2>
+            <p class="advantages-subtitle">
+                Discover why thousands of creative professionals, engineering students, and career aspirants choose SINET for their multimedia and technical career growth.
+            </p>
+
+            <div class="advantages-grid">
+                <!-- 01 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">01</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">ISO 9001:2015 Certified</h3>
+                        <p class="advantage-desc">SINET is an ISO 9001:2015 certified educational organization.</p>
+                    </div>
+                </div>
+
+                <!-- 02 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">02</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">19+ Years of Academic Excellence</h3>
+                        <p class="advantage-desc">SINET's academic team has 19+ years of experience in education and training.</p>
+                    </div>
+                </div>
+
+                <!-- 03 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">03</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Top-Ranked Educational Brand</h3>
+                        <p class="advantage-desc">SINET is one of the top-ranked educational brands in India, recognized by leading public review companies.</p>
+                    </div>
+                </div>
+
+                <!-- 04 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">04</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Exclusive WATO Guarantee</h3>
+                        <p class="advantage-desc">SINET is the only institute offering a WATO Guarantee (Warranty Against Technology Obsolescence).</p>
+                    </div>
+                </div>
+
+                <!-- 05 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">05</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Affordable & Value for Money</h3>
+                        <p class="advantage-desc">SINET courses are highly affordable and provide excellent value for money.</p>
+                    </div>
+                </div>
+
+                <!-- 06 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">06</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">24-Hour Wi-Fi Campus</h3>
+                        <p class="advantage-desc">24-hour broadband connection and Wi-Fi-enabled campus.</p>
+                    </div>
+                </div>
+
+                <!-- 07 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">07</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Global Education Collaborations</h3>
+                        <p class="advantage-desc">SINET has collaborative associations with global education leaders.</p>
+                    </div>
+                </div>
+
+                <!-- 08 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">08</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Government Agency Tie-ups</h3>
+                        <p class="advantage-desc">Regional tie-ups with government agencies for education and training.</p>
+                    </div>
+                </div>
+
+                <!-- 09 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">09</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Licensed SAP User & Training</h3>
+                        <p class="advantage-desc">SINET has been a licensed SAP user since 2012 and provides Power User training.</p>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">10</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Global Certification Facilitator</h3>
+                        <p class="advantage-desc">SINET is a certification facilitator for global certification leaders such as Microsoft, Oracle, Red Hat, Cisco, SAP, etc.</p>
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">11</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Job-Placement & Internship Support</h3>
+                        <p class="advantage-desc">SINET offers effective job-placement training, self-internship opportunities, experience certificates after on-the-job training, and job-search support.</p>
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">12</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">IEEE Project Solutions</h3>
+                        <p class="advantage-desc">SINET provides IEEE project solutions and assistance for engineering students.</p>
+                    </div>
+                </div>
+
+                <!-- 13 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">13</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">0% Interest Educational Loans</h3>
+                        <p class="advantage-desc">SINET provides educational loans at 0% interest.</p>
+                    </div>
+                </div>
+
+                <!-- 14 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">14</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Earn While You Learn Support</h3>
+                        <p class="advantage-desc">SINET runs an “Earn While You Learn” support program for financially disadvantaged students.</p>
+                    </div>
+                </div>
+
+                <!-- 15 -->
+                <div class="advantage-card">
+                    <div class="advantage-num">15</div>
+                    <div class="advantage-content">
+                        <h3 class="advantage-title">Qualified & Experienced Faculty</h3>
+                        <p class="advantage-desc">SINET maintains a team of academically and professionally qualified and experienced faculty.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2257,11 +2675,11 @@ img {
                 <h2>Ready to start your creative career?</h2>
                 <p>Talk to our counselor and find the right multimedia course for you.</p>
                 <div class="cta-actions">
-                    <a href="#" class="btn btn-dark">
+                    <a href="https://wa.me/918086800700" target="_blank" rel="noopener" class="btn btn-dark">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                         WhatsApp Us
                     </a>
-                    <a href="#" class="btn btn-outline-light bg-white-trans">
+                    <a href="tel:+918086800700" class="btn btn-outline-light bg-white-trans">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         Call Now
                     </a>
@@ -2283,7 +2701,7 @@ img {
                         <a href="#" class="social-btn fb" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
                         <a href="#" class="social-btn ig" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                         <a href="#" class="social-btn x" aria-label="X (Twitter)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                        <a href="#" class="social-btn wa" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg></a>
+                        <a href="https://wa.me/918086800700" target="_blank" rel="noopener" class="social-btn wa" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg></a>
                     </div>
                 </div>
                 
@@ -2345,7 +2763,7 @@ img {
     </footer>
 
     <!-- 11 - Floating WhatsApp CTA -->
-    <a href="#" class="floating-wa-btn" aria-label="Chat with us on WhatsApp">
+    <a href="https://wa.me/918086800700" target="_blank" rel="noopener" class="floating-wa-btn" aria-label="Chat with us on WhatsApp">
         <svg viewBox="0 0 24 24" width="34" height="34">
             <path fill="#25D366" d="M12.01 2.01c-5.52 0-9.99 4.47-9.99 9.99 0 1.78.47 3.44 1.28 4.9L2 22l5.24-1.28c1.42.75 3.02 1.18 4.75 1.18 5.52 0 9.99-4.47 9.99-9.99 0-5.52-4.47-9.99-9.99-9.99z"/>
             <path fill="#FFF" d="M17.48 15.35c-.29-.15-1.74-.86-2.01-.96-.28-.09-.48-.15-.68.15-.2.29-.76.96-.94 1.15-.17.2-.35.22-.64.08-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.45-1.74-1.63-2.04-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.2.05-.38-.02-.53-.08-.15-.68-1.64-.94-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.08-.79.37-.28.29-1.05 1.03-1.05 2.5s1.08 2.89 1.23 3.09c.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.74-.71 1.99-1.4.24-.68.24-1.27.17-1.4-.08-.12-.29-.19-.58-.33z"/>
