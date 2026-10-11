@@ -91,11 +91,19 @@ ul {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 900;
-    color: #111;
-    letter-spacing: -1.2px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 1;
     flex-shrink: 0;
+}
+.logo-img {
+    height: 38px;
+    width: auto;
+    max-width: 140px;
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: multiply;
 }
 .logo .dot {
     color: #E53935;
@@ -217,6 +225,11 @@ ul {
 }
 .mn-header .logo {
     font-size: 22px;
+    display: inline-flex;
+    align-items: center;
+}
+.mn-header .logo .logo-img {
+    height: 32px;
 }
 .mn-close {
     background: #FFF2F2;
@@ -561,8 +574,8 @@ footer a {
     .header-inner {
         height: 58px;
     }
-    .logo {
-        font-size: 22px;
+    .logo-img {
+        height: 34px;
     }
     .btn-enquire {
         font-size: 12px;
@@ -589,8 +602,8 @@ footer a {
     .header-inner {
         height: 56px;
     }
-    .logo {
-        font-size: 21px;
+    .logo-img {
+        height: 30px;
     }
     .btn-enquire {
         padding: 6px 12px;
@@ -685,7 +698,9 @@ footer a {
 <!-- ── Header ── -->
 <header class="header">
     <div class="header-inner">
-        <a href="index.html" class="logo">SINET<span class="dot">.</span></a>
+        <a href="index.html" class="logo" aria-label="SINET">
+            <img src="images/sinet.webp" alt="SINET" class="logo-img" width="115" height="38">
+        </a>
 
         <!-- Desktop Navigation -->
         <nav class="nav" aria-label="Main Navigation">
@@ -711,7 +726,9 @@ footer a {
     <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
     <div class="mobile-nav-inner">
         <div class="mn-header">
-            <div class="logo">SINET<span class="dot">.</span></div>
+            <div class="logo" aria-label="SINET">
+                <img src="images/sinet.webp" alt="SINET" class="logo-img" width="97" height="32">
+            </div>
             <button class="mn-close" id="mobileNavClose" aria-label="Close menu">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>

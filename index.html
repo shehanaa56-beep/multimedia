@@ -237,10 +237,19 @@ img {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -1px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 140px;
+  display: block;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .logo .dot {
@@ -340,6 +349,12 @@ img {
   font-weight: 800;
   letter-spacing: -1px;
   color: var(--dark);
+  display: inline-flex;
+  align-items: center;
+}
+
+.mn-header .logo .logo-img {
+  height: 32px;
 }
 
 .mn-header .dot {
@@ -974,12 +989,19 @@ img {
 }
 
 .footer-logo {
-  font-size: 32px;
-  font-weight: 900;
-  color: #111217;
-  letter-spacing: -1.5px;
+  display: inline-block;
+  margin-bottom: 12px;
   line-height: 1;
-  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 160px;
+  display: block;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .footer-logo .dot {
@@ -1896,7 +1918,7 @@ img {
     gap: 40px;
   }
 
-  .footer-logo { font-size: 40px; }
+  .footer-logo-img { height: 48px; }
   .footer-tagline { font-size: 16px; margin-bottom: 24px; }
   .footer-desc { font-size: 15px; margin-bottom: 24px; }
   .branch-title { font-size: 18px; }
@@ -1943,7 +1965,9 @@ img {
     <!-- 01 - Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="#" class="logo">SINET<span class="dot">.</span></a>
+            <a href="#" class="logo" aria-label="SINET">
+                <img src="images/sinet.webp" alt="SINET" class="logo-img" width="115" height="38">
+            </a>
             
             <button class="hamburger" aria-label="Toggle menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1968,7 +1992,9 @@ img {
         <div class="mobile-nav-backdrop"></div>
         <div class="mobile-nav-inner">
             <div class="mn-header">
-                <div class="logo">SINET<span class="dot">.</span></div>
+                <div class="logo" aria-label="SINET">
+                    <img src="images/sinet.webp" alt="SINET" class="logo-img" width="97" height="32">
+                </div>
                 <button class="mn-close" aria-label="Close menu">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
@@ -2694,7 +2720,9 @@ img {
             <div class="footer-grid-3">
                 <!-- Col 1: Brand -->
                 <div class="footer-brand-col">
-                    <h2 class="footer-logo">SINET<span class="dot">.</span></h2>
+                    <a href="#" class="footer-logo" aria-label="SINET">
+                        <img src="images/sinet.webp" alt="SINET" class="footer-logo-img" width="133" height="44">
+                    </a>
                     <p class="footer-tagline">Multimedia & CAD Institute</p>
                     <p class="footer-desc">Building creative and technical careers through quality education, practical training and industry support.</p>
                     <div class="footer-socials">
