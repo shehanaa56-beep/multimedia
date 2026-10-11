@@ -6,20 +6,15 @@
     <title>SINET | Multimedia & CAD Institute</title>
     <meta name="description" content="Learn Graphic Design, Video Editing, Animation & CAD with practical, career-focused training at SINET.">
     
-    <!-- Preconnect to Google Fonts & Unsplash -->
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
     
-    <!-- Preload Hero Image for LCP -->
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=326&q=75">
+    <!-- Preload Critical Local Hero Image for Instant LCP -->
+    <link rel="preload" as="image" href="images/hero.webp" type="image/webp" fetchpriority="high">
 
-    <!-- Defer Google Fonts -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-    </noscript>
+    <!-- Non-blocking Google Fonts with swap -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     
     <style>
 /* 
@@ -31,7 +26,7 @@
   --primary: #E53935;
   --dark: #111111;
   --text: #272727;
-  --muted: #6B7280;
+  --muted: #4B5563;
   --light: #F7F7F8;
   --white: #FFFFFF;
   --border: #EAEAEA;
@@ -52,6 +47,16 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+section[id], footer[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Off-screen rendering optimization for Mobile FCP, LCP & TBT */
+#tools, #placements, #ratings, #advantages, #reviews, #contact, .new-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 body {
@@ -2051,7 +2056,7 @@ img {
                 Create.<br>Design.<br><span class="highlight">Edit.</span>
             </div>
             <div class="hero-visual">
-                <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=326&q=75" alt="Creative Workspace" width="350" height="262" loading="eager" fetchpriority="high" class="hero-img">
+                <img src="images/hero.webp" alt="Creative Workspace" width="350" height="233" loading="eager" fetchpriority="high" decoding="async" class="hero-img">
             </div>
             <p class="hero-subtitle">Build your creative career with SINET.</p>
             <p class="hero-desc">Learn Graphic Design, Video Editing, Animation & CAD with practical, career-focused training.</p>
@@ -2273,7 +2278,7 @@ img {
                 </div>
                 <div class="placement-visual">
                     <a href="https://www.sinet.in/Job-Placements/index.html" target="_blank" rel="noopener">
-                        <img src="images/placement-hero.webp" alt="Multimedia Job Placements" class="handshake-img">
+                        <img src="images/placement-hero.webp" alt="Multimedia Job Placements" class="handshake-img" width="680" height="453" loading="lazy" decoding="async">
                     </a>
                 </div>
             </div>
@@ -2288,7 +2293,7 @@ img {
                     </div>
                 </a>
                 <a href="https://www.sinet.in/sinet_happy_students.html" target="_blank" rel="noopener" class="p-card">
-                    <div class="p-card-icon"><img src="images/testimonials.webp" alt="Testimonials" class="card-image-icon"></div>
+                    <div class="p-card-icon"><img src="images/testimonials.webp" alt="Testimonials" class="card-image-icon" width="355" height="252" loading="lazy" decoding="async"></div>
                     <div class="p-card-content">
                         <h4>Testimonials</h4>
                         <p>Hear from our students about their placement experiences and success stories.</p>
@@ -2296,7 +2301,7 @@ img {
                     </div>
                 </a>
                 <a href="https://www.sinet.in/Global_Certifications/winners_rank_holders.html" target="_blank" rel="noopener" class="p-card">
-                    <div class="p-card-icon"><img src="images/trophy.webp" alt="Global Winners" class="card-image-icon"></div>
+                    <div class="p-card-icon"><img src="images/trophy.webp" alt="Global Winners" class="card-image-icon" width="355" height="252" loading="lazy" decoding="async"></div>
                     <div class="p-card-content">
                         <h4>Global Winners</h4>
                         <p>Our students who have achieved global certifications and placed in top companies.</p>
@@ -2304,7 +2309,7 @@ img {
                     </div>
                 </a>
                 <a href="https://www.sinet.in/certificates/" target="_blank" rel="noopener" class="p-card">
-                    <div class="p-card-icon"><img src="images/gradcap.webp" alt="Get Certified" class="card-image-icon"></div>
+                    <div class="p-card-icon"><img src="images/gradcap.webp" alt="Get Certified" class="card-image-icon" width="355" height="252" loading="lazy" decoding="async"></div>
                     <div class="p-card-content">
                         <h4>Get Certified</h4>
                         <p>Register for the Sinet Examination to test your skills and earn recognized credentials.</p>
@@ -2312,7 +2317,7 @@ img {
                     </div>
                 </a>
                 <a href="https://www.sinet.in/Software%20Projects/Projects.aspx" target="_blank" rel="noopener" class="p-card">
-                    <div class="p-card-icon"><img src="images/projects.webp" alt="Projects" class="card-image-icon"></div>
+                    <div class="p-card-icon"><img src="images/projects.webp" alt="Projects" class="card-image-icon" width="355" height="252" loading="lazy" decoding="async"></div>
                     <div class="p-card-content">
                         <h4>Projects</h4>
                         <p>Explore our comprehensive database of solved software and multimedia projects.</p>
@@ -2320,7 +2325,7 @@ img {
                     </div>
                 </a>
                 <a href="https://www.sinet.in/certificates/" target="_blank" rel="noopener" class="p-card">
-                    <div class="p-card-icon"><img src="images/magnify.webp" alt="Certification" class="card-image-icon"></div>
+                    <div class="p-card-icon"><img src="images/magnify.webp" alt="Certification" class="card-image-icon" width="355" height="252" loading="lazy" decoding="async"></div>
                     <div class="p-card-content">
                         <h4>Certification</h4>
                         <p>Verify your SINET course completion certificate instantly through our secure portal.</p>
@@ -2365,66 +2370,66 @@ img {
 
             <div class="ratings-grid">
                 <!-- Card 1: Google -->
-                <a href="https://www.google.com/search?ei=PBXeXajoO42Z4-EPhIeP0Ao&q=google+rating+of+sinet+education&oq=google+rating+of+sinet+education&gs_l=psy-ab.3...7187.9219..9766...0.2..0.260.1362.0j9j1......0....1..gws-wiz.......0i71j33i160.WpZ3mcq2ZyM&ved=0ahUKEwio9sa834nmAhWNzDgGHYTDA6oQ4dUDCAs&uact=5#lrd=0x3ba7cdab4ceedacf:0xca01390635b1ff01,1,,,x" target="_blank" rel="noopener" class="rating-card">
-                    <span class="external-link-icon" aria-label="View Google Rating">
+                <a href="https://www.google.com/search?ei=PBXeXajoO42Z4-EPhIeP0Ao&q=google+rating+of+sinet+education&oq=google+rating+of+sinet+education&gs_l=psy-ab.3...7187.9219..9766...0.2..0.260.1362.0j9j1......0....1..gws-wiz.......0i71j33i160.WpZ3mcq2ZyM&ved=0ahUKEwio9sa834nmAhWNzDgGHYTDA6oQ4dUDCAs&uact=5#lrd=0x3ba7cdab4ceedacf:0xca01390635b1ff01,1,,,x" target="_blank" rel="noopener" class="rating-card" aria-label="View SINET reviews and ratings on Google">
+                    <span class="external-link-icon" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </span>
                     <div class="card-logo-wrapper">
-                        <img src="images/Sinet-Google.webp" alt="Google" class="rating-logo-img" width="212" height="75" loading="lazy">
+                        <img src="images/Sinet-Google.webp" alt="Google" class="rating-logo-img" width="212" height="75" loading="lazy" decoding="async">
                     </div>
-                    <div class="card-stars">★★★★★</div>
+                    <div class="card-stars" aria-label="5 out of 5 stars">★★★★★</div>
                     <p class="card-text">Sinet is highly rated in the most used search engine in the World Google.</p>
                     <span class="card-cta">Click here to see the rating in Google.. &rarr;</span>
                 </a>
 
                 <!-- Card 2: Sulekha -->
-                <a href="https://www.sulekha.com/profile/sinet-perinthalmanna-malappuram" target="_blank" rel="noopener" class="rating-card">
-                    <span class="external-link-icon" aria-label="View Sulekha Rating">
+                <a href="https://www.sulekha.com/profile/sinet-perinthalmanna-malappuram" target="_blank" rel="noopener" class="rating-card" aria-label="View SINET ratings on Sulekha">
+                    <span class="external-link-icon" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </span>
                     <div class="card-logo-wrapper">
-                        <img src="images/Sinet-sulekha.webp" alt="Sulekha" class="rating-logo-img" width="212" height="75" loading="lazy">
+                        <img src="images/Sinet-sulekha.webp" alt="Sulekha" class="rating-logo-img" width="212" height="75" loading="lazy" decoding="async">
                     </div>
-                    <div class="card-stars">★★★★★</div>
+                    <div class="card-stars" aria-label="5 out of 5 stars">★★★★★</div>
                     <p class="card-text">Sinet is top rated in Sulekha the digital platform of India.</p>
                     <span class="card-cta">Click here to see the rating in Sulekha.. &rarr;</span>
                 </a>
 
                 <!-- Card 3: Quickerala -->
-                <a href="https://www.quickerala.com/malappuram/perinthalmanna/sinet-institute-of-networking/420263" target="_blank" rel="noopener" class="rating-card">
-                    <span class="external-link-icon" aria-label="View Quickerala Rating">
+                <a href="https://www.quickerala.com/malappuram/perinthalmanna/sinet-institute-of-networking/420263" target="_blank" rel="noopener" class="rating-card" aria-label="View SINET ratings on Quickerala">
+                    <span class="external-link-icon" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </span>
                     <div class="card-logo-wrapper">
-                        <img src="images/Sinet-Quickerala.webp" alt="Quickerala" class="rating-logo-img" width="212" height="75" loading="lazy">
+                        <img src="images/Sinet-Quickerala.webp" alt="Quickerala" class="rating-logo-img" width="212" height="75" loading="lazy" decoding="async">
                     </div>
-                    <div class="card-stars">★★★★★</div>
+                    <div class="card-stars" aria-label="5 out of 5 stars">★★★★★</div>
                     <p class="card-text">Sinet is five star rated in Quick Kerala the leading search engine in S.India.</p>
                     <span class="card-cta">Click here to see the rating in Quickerala.. &rarr;</span>
                 </a>
 
                 <!-- Card 4: LearnPick -->
-                <a href="https://www.learnpick.in/center-details/calicut/sinet/21664" target="_blank" rel="noopener" class="rating-card">
-                    <span class="external-link-icon" aria-label="View LearnPick Rating">
+                <a href="https://www.learnpick.in/center-details/calicut/sinet/21664" target="_blank" rel="noopener" class="rating-card" aria-label="View SINET ratings on LearnPick">
+                    <span class="external-link-icon" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </span>
                     <div class="card-logo-wrapper">
-                        <img src="images/sinet-learnpick.webp" alt="LearnPick" class="rating-logo-img" width="212" height="75" loading="lazy">
+                        <img src="images/sinet-learnpick.webp" alt="LearnPick" class="rating-logo-img" width="212" height="75" loading="lazy" decoding="async">
                     </div>
-                    <div class="card-stars">★★★★★</div>
+                    <div class="card-stars" aria-label="5 out of 5 stars">★★★★★</div>
                     <p class="card-text">Sinet is five star rated in Learn Pick the leading education search engine in India.</p>
                     <span class="card-cta">Click here to see the rating in Learn Pick.. &rarr;</span>
                 </a>
 
                 <!-- Card 5: searchi.in -->
-                <a href="http://searchi.in/malappuram/perinthalmanna/sinet-accounts-academy/117753/1" target="_blank" rel="noopener" class="rating-card">
-                    <span class="external-link-icon" aria-label="View Search-i Rating">
+                <a href="http://searchi.in/malappuram/perinthalmanna/sinet-accounts-academy/117753/1" target="_blank" rel="noopener" class="rating-card" aria-label="View SINET ratings on Search-i">
+                    <span class="external-link-icon" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                     </span>
                     <div class="card-logo-wrapper">
-                        <img src="images/sinet-searchi.webp" alt="searchi.in" class="rating-logo-img" width="212" height="75" loading="lazy">
+                        <img src="images/sinet-searchi.webp" alt="searchi.in" class="rating-logo-img" width="212" height="75" loading="lazy" decoding="async">
                     </div>
-                    <div class="card-stars">★★★★★</div>
+                    <div class="card-stars" aria-label="5 out of 5 stars">★★★★★</div>
                     <p class="card-text">Sinet is five star rated in Searh-i the leading search engine in India.</p>
                     <span class="card-cta">Click here to see the rating in Search-i.. &rarr;</span>
                 </a>
